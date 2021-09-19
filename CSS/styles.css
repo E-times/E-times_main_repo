@@ -1,0 +1,23 @@
+.navbar li {
+	margin-right: 15px;
+}
+
+header {
+    margin-bottom: 9%;
+}
+
+footer {
+    margin-top: 2%; 
+    padding-bottom: 3px; 
+    padding-top: 3px; 
+    background-color: rgb(228, 227, 227);
+}
+
+.copyright {
+    font-weight: bold; 
+    font-size: 90%;
+}
+
+html {
+    overflow-x: hidden;
+}
