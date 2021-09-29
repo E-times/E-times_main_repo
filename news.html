@@ -29,9 +29,6 @@
                 <a class="nav-link"  href="index.html">Home</a>
             </li>
             <li class="nav-item menu-item">
-                <a class="nav-link"  href="twitter.html">Twitter</a>
-            </li>
-            <li class="nav-item menu-item">
                 <a class="nav-link active"  href="news.html">News Updates</a>
             </li>
             <li class="nav-item menu-item">
@@ -44,7 +41,7 @@
         </div>
       </nav>
     </header>
-  
+    <div id="render"></div>
   <!-- Footer -->
   <footer class="page-footer sticky-bottom">
     <div class="row justify-content-center">             
@@ -53,6 +50,23 @@
       </div>
     </div>
   </footer>
+    <script>
+      fetch("https://newsapi.org/v2/top-headlines?country=in&apiKey=fb9ad2c832b7473b837360244aa1cf4e",{
+        "method" : "GET"
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response.articles.length);
+        for(var i=0; i<response.articles.length; i++) {
+          console.log(response.articles[i]);
+          document.getElementById("render").innerHTML+=
+          `
+          <div>${response.articles[i].author}</div>
+          `;
+        }
+      })
+      
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

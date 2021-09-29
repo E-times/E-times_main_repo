@@ -29,9 +29,6 @@
                 <a class="nav-link"  href="index.html">Home</a>
             </li>
             <li class="nav-item menu-item">
-                <a class="nav-link"  href="twitter.html">Twitter</a>
-            </li>
-            <li class="nav-item menu-item">
                 <a class="nav-link"  href="news.html">News Updates</a>
             </li>
             <li class="nav-item menu-item">
@@ -53,6 +50,33 @@
       </div>
     </div>
   </footer>
+  <a style="margin-top: 1%;" href="#" id="btn" onclick="res()">click me</a>
+  <script>
+    function res() {
+      document.getElementById("btn").remove();
+      fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today", {
+	"method": "POST",
+	"headers": {
+		"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+		"x-rapidapi-key": "485ca3c6b5msh79ff5cbe55d35c9p1793acjsnf5da2d1c2de9"
+	}
+})
+.then(response => response.json())
+.then(data => {
+  console.log(data.date_range);
+  console.log(data.current_date);
+  console.log(data.description);
+  console.log(data.compatibility);
+  console.log(data.mood);
+  console.log(data.color);
+  console.log(data.lucky_number);
+  console.log(data.lucky_time);
+})
+.catch(err => {
+	console.error(err);
+});
+    }
+  </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
