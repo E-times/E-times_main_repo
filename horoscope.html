@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/horoscope.css" />
 </head>
 <body>
   <!-- collapsible Navbar -->
@@ -41,7 +42,10 @@
         </div>
       </nav>
     </header>
-  
+    <div class="container details" id="details">
+      
+    </div>
+
   <!-- Footer -->
   <footer class="page-footer sticky-bottom">
     <div class="row justify-content-center">             
@@ -50,33 +54,7 @@
       </div>
     </div>
   </footer>
-  <a style="margin-top: 1%;" href="#" id="btn" onclick="res()">click me</a>
-  <script>
-    function res() {
-      document.getElementById("btn").remove();
-      fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=aquarius&day=today", {
-	"method": "POST",
-	"headers": {
-		"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
-		"x-rapidapi-key": "485ca3c6b5msh79ff5cbe55d35c9p1793acjsnf5da2d1c2de9"
-	}
-})
-.then(response => response.json())
-.then(data => {
-  console.log(data.date_range);
-  console.log(data.current_date);
-  console.log(data.description);
-  console.log(data.compatibility);
-  console.log(data.mood);
-  console.log(data.color);
-  console.log(data.lucky_number);
-  console.log(data.lucky_time);
-})
-.catch(err => {
-	console.error(err);
-});
-    }
-  </script>
+    <script src="Scripts/horoscope.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

@@ -1,0 +1,13 @@
+.items {
+    margin-top: 3%;
+}
+
+.card-header {
+    font-size: 125%;
+    font-weight: bold;
+}
+
+.image {
+    border-radius: 10%;
+    margin-right: 5%;
+}
