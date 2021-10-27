@@ -35,30 +35,30 @@
                 <a class="nav-link"  href="horoscope.html">Horoscope</a>
             </li>
             <li class="nav-item menu-item">
-                <a class="nav-link active"  href="livescore.html">Live Score</a>
+                <a class="nav-link active"  href="livescore.html">Score</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
-  
+    <div class="details container">
+      <form class="form-group row">
+        <label class="col-2 offset-3">Enter a date</label>
+        <input type="date" id="date" name="date" min="2003-01-01" max="2021-12-31" class="col-4" onchange="renderScore()">
+      </form>
+    </div>
+    <div id="rendercardscores">
+
+    </div>
   <!-- Footer -->
-  <footer class="page-footer sticky-bottom">
+  <footer class="page-footer fixed-bottom">
     <div class="row justify-content-center">             
       <div class="col-auto">
           <p class="copyright">© Copyright all rights reserved to E-Times</p>
       </div>
     </div>
   </footer>
-    <script>
-      fetch("https://cricket-api.vercel.app/cri.php?url=https://www.cricbuzz.com/live-cricket-scores/37611/rr-vs-rcb-43rd-match-indian-premier-league-2021", {
-        "method": "GET"
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      })
-    </script>
+    <script src="Scripts/livescore.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

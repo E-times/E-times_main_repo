@@ -11,7 +11,7 @@ var sign = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Sco
         .then(response => response.json())
         .then((data) => {
              console.log(data);
-            // console.log(data.current_date);
+            // console.log(data);
             // console.log(data.description);
             // console.log(data.compatibility);
             // console.log(data.mood);
